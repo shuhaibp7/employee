@@ -1,3 +1,3 @@
 import React from "react";
-import UserForm from "./User/UserForm";
-export default ()=> <UserForm/>;
+import UserView from "./User/UserView";
+export default ()=> <UserView/>;

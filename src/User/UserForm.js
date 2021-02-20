@@ -2,15 +2,6 @@ import React, { useState } from "react";
 import "./UserForm.css";
 
 function UserApp() {
-    // const [input_name, setInput_name] = useState("");
-    // const [input_age, setInput_age] = useState("");
-    // const [input_place, setInput_place] = useState("");
-    // const [input_phone, setInput_phone] = useState("");
-    // const [input_email, setInput_email] = useState("");
-
-    // const handleChange = (event) => {
-    //     setInput_name(event.target.value);
-    //   };
 
     const [values, setValues]= useState({
         username:'',
@@ -36,14 +27,12 @@ function UserApp() {
                   'Content-type': 'application/json',
             },
             body: JSON.stringify({
-                name: {name},
-                age: {age},
-                place:{place},
-                phone:{phone},
-                email:{email}
-                
+                name,
+                age,
+                place,
+                phone,
+                email
               }),
-            //   data: JSON.stringify(data)
             });
             console.log("post result :" + result);
             console.log(name);
@@ -53,9 +42,6 @@ function UserApp() {
 
         }
     }
-      
-   
-      
         return (
             <div className="user-form">
                 <form className="input-section">
@@ -102,9 +88,7 @@ function UserApp() {
                     >
                     </input>
                     <button onClick={(event) =>postUserData(event,values.username,values.age,values.place,values.phoneNo,values.email)}>Submit</button>
-
-                </form>
-                
+                </form>               
             </div>
         )
 }
